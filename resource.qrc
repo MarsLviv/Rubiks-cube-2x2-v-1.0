@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="arrow3.wav">res_audio/arrow3.wav</file>
+    </qresource>
+</RCC>
