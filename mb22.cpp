@@ -490,68 +490,6 @@ void MB22::slotButIsoClicked(){
                             rotXYZangle(QVector3D(0.0, 0.0, 1.0), 0);
     rotation = result * rotation;
     updateGL();
-
-    // set to initial position 0, 0, 0
-    /*QQuaternion k = rotation.conjugate();
-    rotation = k * rotation;
-    updateGL();*/
-
-    /*double teta = 2 * acos(rotation.scalar()) * 180 / 3.14159265;
-    double tetaR = 2 * acos(rotation.scalar());
-    QVector3D vec = rotation.vector();
-    qDebug() <<"vector:" << vec.x() << "  " << vec.y() << "  " << vec.z()
-               <<"    Teta:" << teta;
-    qDebug() <<"x y z:" << rotation.x() << "  " << rotation.y() << "  " << rotation.z()
-               <<"    Teta:" << teta;
-    double x, y, z;
-    x = vec.x() * sin(tetaR / 2); y = vec.y() * sin(tetaR / 2); z = vec.z() * sin(tetaR / 2);
-    qDebug() <<"calculated x y z:" << x << "  " << y << "  " << z;
-    QVector3D vecN(x, y, z);
-    vecN.normalize();
-    qDebug() <<"calculated x y z:" << vecN.x() << "  " << vecN.y() << "  " << vecN.z();
-    //int n = teta / 10;
-    //qDebug() <<"n:" << n;
-    //rotation.setX(0.0); rotation.setY(0.0); rotation.setZ(0.0); rotation.setScalar(1.0);
-
-    QQuaternion result =    rotXYZangle(QVector3D(vecN.x(), 0.0, 0.0), teta) *
-                            rotXYZangle(QVector3D(0.0, vecN.y(), 0.0), teta) *
-                            rotXYZangle(QVector3D(0.0, 0.0, vecN.z()), teta);
-    rotation = result * rotation;
-    updateGL();*/
-    /*QQuaternion mid;
-    mid = QQuaternion::slerp(rotation, result, 1.0);
-    rotation = mid * rotation;
-
-    QVector3D vecN = mid.vector();
-    double tetaN = 2 * acos(mid.scalar()) * 180 / 3.14159265;
-    qDebug() <<"vectorN:" << vecN.x() << "  " << vecN.y() << "  " << vecN.z()
-               <<"    Teta:" << tetaN;
-    updateGL();*/
-
-    /*qDebug() << "rotation.x:" << rotation.x() << "  y:" << rotation.y() << "  z:"
-             << rotation.z() <<"   Scalar:" << rotation.scalar();
-    QVector3D vec = rotation.vector();
-
-    double teta = 2 * acos(rotation.scalar()) * 180 / 3.14159265;
-    qDebug() <<"vector:" << vec.x() << "  " << vec.y() << "  " << vec.z()
-               <<"    Teta:" << teta;
-
-    rotationInIso.setX(0.0);
-    rotationInIso.setY(0.0);
-    rotationInIso.setScalar(1);
-
-    QVector3D newVec(0.2, -0.17, 0);
-    QQuaternion s = QQuaternion::fromAxisAndAngle(newVec.normalized(), 0.96);
-
-    rotationToIso = QQuaternion::nlerp(rotation, rotationInIso, 0.5);
-    rotation = rotation * rotationToIso;
-    updateGL();
-    //qDebug() <<"rotationToIso:" << rotationToIso.x() << "  " << rotationToIso.y() << "  " << rotationToIso.z();
-    //teta = 2 * acos(rotationToIso.scalar()) * 180 / 3.14159265;
-    //qDebug() <<"teta:" << teta;*/
-
-
-
 }
 
 void MB22::slotButOrderClicked(){
